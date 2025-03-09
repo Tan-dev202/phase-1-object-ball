@@ -135,7 +135,7 @@ function shoeSize(playerName) {
 }
 
 function findTeamName(teamName) {
-    return teams.find((team) => team.teamName == teamName);
+    return teams.find((team) => team.teamName === teamName);
 }
 
 function teamColors(teamName) {
@@ -191,7 +191,7 @@ function playerWithLongestName() {
 
 function doesLongNameStealATon() {
     const allStats = Object.values(players);  
-    const mostSteals = Math.max(...allStats.map((s) => s.steals));  
     const longNameSteals = playerStats(playerWithLongestName()).steals;  
+    const mostSteals = Math.max(...allStats.map((steal) => steal.steals));  
     return longNameSteals === mostSteals;  
 }
